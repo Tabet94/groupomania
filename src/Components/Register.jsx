@@ -1,14 +1,22 @@
 import React, { useState } from "react";
+import axios from 'axios'
 
 
 export const Register = () => {
     const [email,setEmail] = useState('');
-    const [pass,setPass] = useState ('');
+    const [password,setPassword] = useState ('');
     const [name,setName] = useState('');
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("email", email);
+            if (!name || !email || !password) {
+            console.log('One or more fields are missing');
+            return;
+          }
+
+        axios.post('http://localhost:5000/user', { name, email, password }) 
+        .then(res => console.log("Registered successfully"))
+        .catch(err => console.log(err))
     }
    
     return (
@@ -18,9 +26,9 @@ export const Register = () => {
                 <h1>SignUp</h1> 
                 <label htmlFor="Full name">NAME</label>
                 <input value={name}
-                    onChange={e => setName(e.targetvalue)} 
+                    onChange={e => setName(e.target.value)} 
                     type="text" 
-                    placeholder="Username" 
+                    placeholder="Enter Name" 
                     name="name" 
                     id="name">    
                 </input> 
@@ -28,15 +36,15 @@ export const Register = () => {
                 <input value={email}
                     onChange={e => setEmail(e.target.value)}
                     type="text" 
-                    placeholder="Useremail" 
+                    placeholder="Enter Email" 
                     id='email'
                     name='email'>
                 </input>  
                 <label htmlFor="password">PASSWORD</label>
-                <input value={pass} 
-                    onChange={e => setPass(e.targetvalue)} 
-                    type="text"
-                    placeholder="*******" 
+                <input value={password} 
+                    onChange={e => setPassword(e.target.value)} 
+                    type="password"
+                    placeholder="Enter Password" 
                     id='password'
                     name='password'>   
                 </input>

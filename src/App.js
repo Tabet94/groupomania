@@ -5,7 +5,6 @@ import { Register } from "./Components/Register";
 import { Side } from "./Components/Side";
 
 
-
 function App() {
   const [currentForm, setCurrentForm] = useState("login");
 

@@ -13,18 +13,3 @@
   align-items: flex-start;
   background:linear-gradient(96deg, rgba(2,0,36,1) 0%, rgba(218,221,231,1) 0%, rgba(247,249,251,1) 6%);
 }
-.auth-container {
-  width: 100%; /* Occupy full width */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px; /* Add some spacing */
-}
-
-/* Use media query for mobile screens */
-@media (max-width: 768px) {
-  .auth-container {
-    flex-direction: column; /* Stack content on mobile */
-  }
-}
