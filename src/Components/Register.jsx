@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import axios from 'axios'
+import { Link, useNavigate } from "react-router-dom";
 
 
 export const Register = () => {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState ('');
     const [name,setName] = useState('');
+    const navigate = useNavigate();
+    
     
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -15,7 +18,11 @@ export const Register = () => {
           }
 
         axios.post('http://localhost:5000/user', { name, email, password }) 
-        .then(res => console.log("Registered successfully"))
+        .then((res) => {
+            console.log('Registration successful');
+            navigate('/login');
+          
+          })
         .catch(err => console.log(err))
     }
    
@@ -49,7 +56,8 @@ export const Register = () => {
                     name='password'>   
                 </input>
                 <button className='register-btn' type='submit'>Sing Up</button>
-            </form>   
+            </form>
+            <Link to="/login" className='link-btn'>login</Link>   
         </div>
     );
 };

@@ -2,7 +2,6 @@
   margin: 0;
   box-sizing: border-box;
   padding :0;
-  
 }
 
 .App {
@@ -11,5 +10,5 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background:linear-gradient(96deg, rgba(2,0,36,1) 0%, rgba(218,221,231,1) 0%, rgba(247,249,251,1) 6%);
+  background:linear-gradient(96deg, rgb(36, 0, 16) 0%, rgb(231, 218, 221) 0%, rgb(251, 247, 247) 6%);
 }

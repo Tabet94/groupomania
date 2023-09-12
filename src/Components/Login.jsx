@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Login.css';
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -54,7 +56,9 @@ export const Login = () => {
                 <button className="login-btn" type="submit">
                     Log In
                 </button>
+                
             </form>
+            <Link to="/register" className='link-btn'>Create account</Link> 
         </div>
     );
 };

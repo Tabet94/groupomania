@@ -1,31 +1,20 @@
-import React, { useState } from "react";
+import React from 'react';
 import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom"; 
 import { Login } from "./Components/Login";
 import { Register } from "./Components/Register";
-import { Side } from "./Components/Side";
-
+import { Home } from "./Homepage/Home";
 
 function App() {
-  const [currentForm, setCurrentForm] = useState("login");
-
-  const toggleForm = () => {
-    setCurrentForm(currentForm === "login" ? "register" : "login");
-  };
-
   return (
-    <div className="App">
-      <div className="content-container">
-      {currentForm === "login" ? <Login /> : <Register />}
-        <div className="link-container">
-          <button className="link-btn" onClick={toggleForm}>
-            Switch to {currentForm === "login" ? "Register" : "Login"}
-          </button>
-        </div>
-      </div>
-      <Side/>  
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/home' element={<Home/>}></Route>
+        <Route path='/register' element={<Register/>}></Route>
+        <Route path='/login' element={<Login/>}></Route>
+      </Routes>
+    </BrowserRouter>
   );
-};
-
+}
 
 export default App;
