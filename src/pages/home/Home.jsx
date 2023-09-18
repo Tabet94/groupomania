@@ -1,10 +1,11 @@
 import React from "react";
+import { Posts } from "../../Components/posts/Posts";
 import './home.css'
 
 export const Home = () => {
   return (
-    <div>
-      Home
+    <div className="home">
+      <Posts/>
     </div>
   )
 };

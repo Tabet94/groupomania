@@ -1,0 +1,20 @@
+/* Default styles for .home */
+.home {
+    padding: 20px 70px;
+    background-image: url("../../Image/back.jpg");
+  }
+  
+  /* Styles for .home on mobile screens */
+  @media (max-width: 480px) {
+    .home {
+      padding: 10px;
+    }
+  }
+  
+  /* Styles for .home on tablet screens */
+  @media (max-width: 960px) {
+    .home {
+      padding: 20px;
+    }
+  }
+  

@@ -1,0 +1,76 @@
+.comments {
+  color: #000; 
+  background-color: white; 
+
+  /* Styles for images inside .comments */
+  .comments img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  /* Styles for .write */
+  .comments .write {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px 0px;
+  }
+
+  /* Styles for input inside .write */
+  .comments .write input {
+    flex: 5;
+    padding: 10px;
+    border: 1px solid lightgray;
+    background-color: transparent;
+    color: #000; 
+  }
+
+  /* Styles for button inside .write */
+  .comments .write button {
+    border: none;
+    background-color: #5271ff;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+
+  /* Styles for .comment */
+  .comments .comment {
+    margin: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  /* Styles for .info inside .comment */
+  .comments .comment .info {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: flex-start;
+  }
+
+  /* Styles for spans inside .info */
+  .comments .comment .info span {
+    font-weight: 500;
+  }
+
+  /* Styles for paragraphs inside .info */
+  .comments .comment .info p {
+    color: #555; /* Use your theme's textColorSoft */
+  }
+
+  /* Styles for .date inside .comment */
+  .comments .comment .date {
+    flex: 1;
+    align-self: center;
+    color: gray;
+    font-size: 12px;
+  }
+}
+  
