@@ -1,8 +1,6 @@
-
-/* .register Container */
 .register {
     height: 100vh;
-    background-color: rgb(193, 190, 255);
+    background-color:#1f306e;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,11 +41,10 @@
   }
   
   .register .card .left button {
-    width: 50%;
     padding: 10px;
     border: none;
-    background-color: white;
-    color: rebeccapurple;
+    background-color: #f5487f;
+    color: black;
     font-weight: bold;
     cursor: pointer;
   }
@@ -82,8 +79,8 @@
     width: 50%;
     padding: 10px;
     border: none;
-    background-color: #938eef;
-    color: white;
+    background-color: #f5487f;
+    color: black;
     font-weight: bold;
     cursor: pointer;
   }

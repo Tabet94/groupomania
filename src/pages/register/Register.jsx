@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./register.css";
 import axios from "axios";
 
@@ -11,6 +11,7 @@ export const Register = () => {
     name: "",
   });
   const [err, setErr] = useState(null);
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -21,6 +22,7 @@ export const Register = () => {
 
     try {
       await axios.post("http://localhost:5000/backend/auth/register", inputs);
+      navigate("/login")
     } catch (err) {
       setErr(err.response.data);
     }

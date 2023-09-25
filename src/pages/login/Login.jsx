@@ -34,7 +34,7 @@ export const Login = () => {
           <h1>Groupomania</h1>
           <p>
             Hello and welcome again,
-            Connect your into your account,
+            Connect into your account,
             & stay in touch with your co-workers.
           </p>
           <span>Don't you have an account?</span>

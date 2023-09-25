@@ -1,8 +1,5 @@
 import React from "react";
-import '../navbar/navbar.css';
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import "./navbar.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import {AuthContext} from "../../context/authContext";
@@ -21,9 +18,6 @@ export const Navbar =() => {
        
       </div>
       <div className="right">
-        <PersonOutlinedIcon />
-        <EmailOutlinedIcon />
-        <NotificationsOutlinedIcon />
         <div className="user">
           <img
             src={currentUser.profilePic}
