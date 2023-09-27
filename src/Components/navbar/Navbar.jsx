@@ -6,25 +6,29 @@ import {AuthContext} from "../../context/authContext";
 
 
 
-
 export const Navbar =() => {
   const { currentUser } = useContext(AuthContext);
+
+  
   return (
     <div className="navbar">
       <div className="left">
         <Link to="/" style={{ textDecoration: "none" }}>
           <span>Groupomania</span>
         </Link>
-       
       </div>
       <div className="right">
         <div className="user">
+          <Link
+          to= {`/profile/:id`}
+          style = {{textDecoration: "none", color: "inherit"}}>
           <img
-            src={currentUser.profilePic}
-            alt=""
-          />
-           <span>{currentUser.name}</span>
+            src={`/upload/` + currentUser.profilePic}
+            alt=""/>
+          <span>{currentUser.name}</span>
+          </Link>   
         </div>
+       
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 import "./post.css";
- import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
- import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
- import InsertCommentIcon from '@mui/icons-material/InsertComment';
- import DeleteIcon from '@mui/icons-material/Delete';
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
+import InsertCommentIcon from '@mui/icons-material/InsertComment';
+import DeleteIcon from '@mui/icons-material/Delete';
 import { Link } from "react-router-dom";
 import {Comments} from "../comments/Comments"
 import { useState } from "react";
@@ -17,18 +17,17 @@ import { AuthContext } from "../../context/authContext";
 export const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  
-
   const { currentUser } = useContext(AuthContext);
-
+  const queryClient = useQueryClient();
+  
+  
   const { isLoading, data } = useQuery(["likes", post.id], () =>
     makeRequest.get("/likes?postId=" + post.id).then((res) => {
       return res.data;
     })
   );
-
-  const queryClient = useQueryClient();
-
+  
+  
   const mutation = useMutation(
     (liked) => {
       if (liked) return makeRequest.delete("/likes?postId=" + post.id);
@@ -41,6 +40,8 @@ export const Post = ({ post }) => {
       },
     }
   );
+  
+  
   const deleteMutation = useMutation(
     (postId) => {
       return makeRequest.delete("/posts/" + postId);
@@ -53,6 +54,7 @@ export const Post = ({ post }) => {
     }
   );
 
+  
   const handleLike = () => {
     mutation.mutate(data.includes(currentUser.id));
   };
@@ -61,6 +63,8 @@ export const Post = ({ post }) => {
     deleteMutation.mutate(post.id);
   };
 
+  
+  
   return (
     <div className="post">
       <div className="container">
@@ -70,8 +74,7 @@ export const Post = ({ post }) => {
             <div className="details">
               <Link
                 to={`/profile/${post.userId}`}
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
+                style={{ textDecoration: "none", color: "inherit" }}>
                 <span className="name">{post.name}</span>
               </Link>
               <span className="date">{moment(post.createdAt).fromNow()}</span>
@@ -79,8 +82,7 @@ export const Post = ({ post }) => {
           </div>
           <DeleteIcon onClick={() => setMenuOpen(!menuOpen)} />
           {menuOpen && post.userId === currentUser.id && (
-            <button  onClick={handleDelete}>delete</button>
-          )}
+            <button  onClick={handleDelete}>delete</button>)}
         </div>
         <div className="content">
           <p>{post.desc}</p>
@@ -93,18 +95,17 @@ export const Post = ({ post }) => {
             ) : data.includes(currentUser.id) ? (
               <FavoriteOutlinedIcon
                 style={{ color: "red" }}
-                onClick={handleLike}
-              />
+                onClick={handleLike}/>
             ) : (
-              <FavoriteBorderOutlinedIcon onClick={handleLike} />
+              <FavoriteBorderOutlinedIcon
+               onClick={handleLike}/>
             )}
-            {data?.length} Likes
+            {data?.length} 
           </div>
           <div className="item" onClick={() => setCommentOpen(!commentOpen)}>
             <InsertCommentIcon />
             See Comments
           </div>
-
         </div>
         {commentOpen && <Comments postId={post.id} />}
       </div>

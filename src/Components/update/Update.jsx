@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState} from "react";
 import { makeRequest } from "../../axios";
+import { useNavigate } from "react-router-dom";
 import "./update.css";
 import { useMutation, useQueryClient } from "react-query";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
@@ -13,6 +14,7 @@ export const Update = ({ setOpenUpdate, user }) => {
     name: user.name,
   });
 
+  
   const upload = async (file) => {
     console.log(file)
     try {
@@ -25,6 +27,7 @@ export const Update = ({ setOpenUpdate, user }) => {
     }
   };
 
+  
   const handleChange = (e) => {
     setTexts((prev) => ({ ...prev, [e.target.name]: [e.target.value] }));
   };
@@ -43,6 +46,8 @@ export const Update = ({ setOpenUpdate, user }) => {
     }
   );
 
+  
+  
   const handleClick = async (e) => {
     e.preventDefault();
     
@@ -55,8 +60,22 @@ export const Update = ({ setOpenUpdate, user }) => {
     setOpenUpdate(false);
     setCover(null);
     setProfile(null);
-  }
+  };
 
+
+  const navigate = useNavigate()
+
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    try {
+      await makeRequest.delete("/deleteUser"); 
+       navigate("/login")
+    } catch (err) {
+      console.error(err);
+      // Handle any errors or show an error message
+    }
+  };
+  
   return (
     <div className="update">
       <div className="wrapper">
@@ -70,10 +89,8 @@ export const Update = ({ setOpenUpdate, user }) => {
                   src={
                     cover
                       ? URL.createObjectURL(cover)
-                      : "/upload/" + user.coverPic
-                  }
-                  alt=""
-                />
+                      : "/upload/" + user.coverPic}
+                  alt=""/>
                 <CloudUploadIcon className="icon" />
               </div>
             </label>
@@ -81,8 +98,7 @@ export const Update = ({ setOpenUpdate, user }) => {
               type="file"
               id="cover"
               style={{ display: "none" }}
-              onChange={(e) => setCover(e.target.files[0])}
-            />
+              onChange={(e) => setCover(e.target.files[0])}/>
             <label htmlFor="profile">
               <span>Profile Picture</span>
               <div className="imgContainer">
@@ -90,46 +106,41 @@ export const Update = ({ setOpenUpdate, user }) => {
                   src={
                     profile
                       ? URL.createObjectURL(profile)
-                      : "/upload/" + user.profilePic
-                  }
-                  alt=""
-                />
-                <CloudUploadIcon className="icon" />
+                      : "/upload/" + user.profilePic}
+                  alt=""/>
+                <CloudUploadIcon className="icon"/>
               </div>
             </label>
             <input
               type="file"
               id="profile"
               style={{ display: "none" }}
-              onChange={(e) => setProfile(e.target.files[0])}
-            />
+              onChange={(e) => setProfile(e.target.files[0])}/>
           </div>
           <label>Email</label>
           <input
             type="text"
             value={texts.email}
             name="email"
-            onChange={handleChange}
-          />
+            onChange={handleChange}/>
           <label>Password</label>
           <input
             type="text"
             value={texts.password}
             name="password"
-            onChange={handleChange}
-          />
+            onChange={handleChange}/>
           <label>Name</label>
           <input
             type="text"
             value={texts.name}
             name="name"
-            onChange={handleChange}
-          />
+            onChange={handleChange}/>
           <button onClick={handleClick}>Update</button>
+          <button onClick={handleDelete} className="delete-button">
+            Delete Account
+          </button>
         </form>
-        <button className="close" onClick={() => setOpenUpdate(false)}>
-          close
-        </button>
+        <button className="close" onClick={() => setOpenUpdate(false)}>close</button>
       </div>
     </div>
   );

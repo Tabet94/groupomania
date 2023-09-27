@@ -10,6 +10,8 @@ export const Register = () => {
     password: "",
     name: "",
   });
+  
+  
   const [err, setErr] = useState(null);
   const navigate = useNavigate()
 
@@ -50,26 +52,22 @@ export const Register = () => {
               type="text"
               placeholder="Username"
               name="username"
-              onChange={handleChange}
-            />
+              onChange={handleChange}/>
             <input
               type="email"
               placeholder="Email"
               name="email"
-              onChange={handleChange}
-            />
+              onChange={handleChange}/>
             <input
               type="password"
               placeholder="Password"
               name="password"
-              onChange={handleChange}
-            />
+              onChange={handleChange}/>
             <input
               type="text"
               placeholder="Name"
               name="name"
-              onChange={handleChange}
-            />
+              onChange={handleChange}/>
             {err && err}
             <button onClick={handleClick}>Register</button>
           </form>

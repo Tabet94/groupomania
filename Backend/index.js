@@ -10,8 +10,7 @@ import cors from "cors";
 import multer from "multer";
 
 
-
-// middlewares
+// MIDDLWARES ...............................................................................
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Credentials", true);
   next();
@@ -24,6 +23,9 @@ app.use(
 );
 app.use(cookieParser());
 
+
+
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, '../social-app/public/upload')
@@ -33,12 +35,14 @@ const storage = multer.diskStorage({
     
     cb(null, Date.now() + file.originalname )
   }
-})
+});
+
+
 const upload = multer({ storage: storage })
 app.post ("/backend/upload", upload.single("file"), (req,res) => {
   const file = req.file;
   res.status(200).json(file.filename)
-})
+});
 
 
 app.use("/backend/auth",authRoutes);
@@ -51,4 +55,4 @@ app.use("/backend/likes",likeRoutes);
 
 app.listen(5000, () => {
   console.log('Listening on port 5000');
-    });
+});
