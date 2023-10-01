@@ -40,7 +40,6 @@ export const Update = ({ setOpenUpdate, user }) => {
     },
     {
       onSuccess: () => {
-        // Invalidate and refetch
         queryClient.invalidateQueries(["user"]);
       },
     }
@@ -64,17 +63,26 @@ export const Update = ({ setOpenUpdate, user }) => {
 
 
   const navigate = useNavigate()
-
-  const handleDelete = async (e) => {
-    e.preventDefault();
-    try {
-      await makeRequest.delete("/deleteUser"); 
-       navigate("/login")
-    } catch (err) {
-      console.error(err);
-      // Handle any errors or show an error message
+  
+  const handleDelete = async () => {
+    if (window.confirm("Are you sure you want to delete your account?")) {
+      try {
+        // Send a DELETE request to the server to delete the user
+        const response = await makeRequest.delete("/users");
+        if (response.data === "User deleted successfully!") {
+          navigate("/login")
+        } else {
+          // Handle error (e.g., display an error message)
+        }
+      } catch (error) {
+        console.error(error);
+        // Handle error (e.g., display an error message)
+      }
     }
   };
+  
+
+ 
   
   return (
     <div className="update">

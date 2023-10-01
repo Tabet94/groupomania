@@ -12,8 +12,6 @@
   }
   
   .share .container .top {
-    display: flex;
-    align-items: center;
     gap: 20px;
   }
   
@@ -32,12 +30,6 @@
     width: 60%;
   }
   
-  .share .container hr {
-    margin: 20px 0px;
-    border: none;
-    height: 0.5px;
-    
-  }
   
   .share .container .bottom {
     display: flex;
@@ -68,7 +60,7 @@
   }
   
   .share .container .bottom .right button {
-  background-color:#f5487f;
+  background-color:#AE445A;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -77,4 +69,6 @@
   border-radius: 20px;
   margin-left: 10px;
   }
-  
+  .share .container .bottom .right button:hover {
+    background-color: #f5487f;
+  }

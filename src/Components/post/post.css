@@ -1,4 +1,3 @@
-
 .post {
   -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
   -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
@@ -8,25 +7,24 @@
   color: #000; 
 }
 
-/* Styles for .container inside .post */
-.post .container {
+.container {
   padding: 20px;
 }
 
-/* Styles for .user inside .container */
+
 .post .container .user {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Styles for .userInfo inside .user */
+
 .post .container .user .userInfo {
   display: flex;
   gap: 20px;
 }
 
-/* Styles for images inside .userInfo */
+
 .post .container .user .userInfo img {
   width: 40px;
   height: 40px;
@@ -34,28 +32,28 @@
   object-fit: cover;
 }
 
-/* Styles for .details inside .userInfo */
+
 .post .container .user .userInfo .details {
   display: flex;
   flex-direction: column;
 }
 
-/* Styles for .name inside .details */
+
 .post .container .user .userInfo .details .name {
   font-weight: 500;
 }
 
-/* Styles for .date inside .details */
+
 .post .container .user .userInfo .details .date {
   font-size: 12px;
 }
 
-/* Styles for .content inside .container */
+
 .post .container .content {
   margin: 20px 0px;
 }
 
-/* Styles for images inside .content */
+
 .post .container .content img {
   width: 100%;
   max-height: 500px;
@@ -63,14 +61,14 @@
   margin-top: 20px;
 }
 
-/* Styles for .info inside .container */
+
 .post .container .info {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-/* Styles for .item inside .info */
+
 .post .container .info .item {
   display: flex;
   align-items: center;
@@ -78,6 +76,7 @@
   cursor: pointer;
   font-size: 14px;
 }
+
 
 
   

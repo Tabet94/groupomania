@@ -1,6 +1,6 @@
 .register {
     height: 100vh;
-    background-color:#1f306e;
+    background-color:#1D1A39;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,8 +43,7 @@
   .register .card .left button {
     padding: 10px;
     border: none;
-    background-color: #f5487f;
-    color: black;
+    background-color:#451952;
     font-weight: bold;
     cursor: pointer;
   }
@@ -79,8 +78,7 @@
     width: 50%;
     padding: 10px;
     border: none;
-    background-color: #f5487f;
-    color: black;
+    background-color: #451952;
     font-weight: bold;
     cursor: pointer;
   }

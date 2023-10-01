@@ -2,7 +2,7 @@
 
 .login {
     height: 100vh;
-    background-color: #1f306e;
+    background-color: #1D1A39;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,9 +41,8 @@
   }
   
   .login .card .left button {
-    background-color: #f5487f;
+    background-color:#451952;
     padding: 10px;
-    color:black;
     font-weight: bold;
     cursor: pointer;
   }
@@ -77,8 +76,7 @@
   .login .card .right form button {
     padding: 10px;
     border: none;
-    background-color: #f5487f;
-    color: black;
+    background-color:#451952;
     font-weight: bold;
     cursor: pointer;
   }

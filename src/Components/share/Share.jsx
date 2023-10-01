@@ -34,7 +34,6 @@ export const Share = () => {
     },
     {
       onSuccess: () => {
-        // Invalidate and refetch
         queryClient.invalidateQueries(["posts"]);
       },
     }
@@ -70,7 +69,6 @@ export const Share = () => {
             )}
           </div>
         </div>
-        <hr />
         <div className="bottom">
           <div className="left">
             <input

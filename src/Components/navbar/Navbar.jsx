@@ -2,14 +2,12 @@ import React from "react";
 import "./navbar.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import {AuthContext} from "../../context/authContext";
+import { AuthContext } from "../../context/authContext";
 
 
-
-export const Navbar =() => {
+export const Navbar = () => {
   const { currentUser } = useContext(AuthContext);
 
-  
   return (
     <div className="navbar">
       <div className="left">
@@ -20,15 +18,16 @@ export const Navbar =() => {
       <div className="right">
         <div className="user">
           <Link
-          to= {`/profile/:id`}
-          style = {{textDecoration: "none", color: "inherit"}}>
-          <img
-            src={`/upload/` + currentUser.profilePic}
-            alt=""/>
-          <span>{currentUser.name}</span>
-          </Link>   
+            to={`/profile/${currentUser.id}`} 
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <img
+              src={`/upload/${currentUser.profilePic}`}
+              alt=""
+            />
+            <span>{currentUser.name}</span>
+          </Link>
         </div>
-       
       </div>
     </div>
   );

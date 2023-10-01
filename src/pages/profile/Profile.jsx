@@ -39,7 +39,7 @@ export const Profile = () => {
               <span>{data.name}</span>
             </div>
             <button onClick={() => setOpenUpdate(true)}>update</button>
-            {openUpdate && userId ===currentUser.id && <Update setOpenUpdate={setOpenUpdate} user={data} />}
+            {openUpdate && userId === currentUser.id && <Update setOpenUpdate={setOpenUpdate} user={data} />}
           </div>
         </div>
         </>

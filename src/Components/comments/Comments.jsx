@@ -6,11 +6,9 @@ import {makeRequest} from "../../axios";
 import moment from "moment";
 
 
-
 export const Comments = ({ postId }) => {
   const [desc, setDesc] = useState("");
   const { currentUser } = useContext(AuthContext);
-  
 
   const { isLoading, error, data } = useQuery(["comments"], () =>
     makeRequest.get("/comments?postId=" + postId).then((res) => {
@@ -38,9 +36,6 @@ export const Comments = ({ postId }) => {
     setDesc("");
   };
 
-
-
-
   return (
     <div className="comments">
       <div className="write">
@@ -49,7 +44,8 @@ export const Comments = ({ postId }) => {
           type="text"
           placeholder="write a comment"
           value={desc}
-          onChange={(e) => setDesc(e.target.value)}/>
+          onChange={(e) => setDesc(e.target.value)}
+        />
         <button onClick={handleClick}>Send</button>
       </div>
       {error
@@ -66,7 +62,8 @@ export const Comments = ({ postId }) => {
               <span className="date">
                 {moment(comment.createdAt).fromNow()}
               </span>
-            </div>))}   
+            </div>
+          ))}
     </div>
   );
 };
