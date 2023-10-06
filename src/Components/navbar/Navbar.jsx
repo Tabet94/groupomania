@@ -3,6 +3,7 @@ import "./navbar.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/authContext";
+import { Logout } from "../logout/Logout";
 
 
 export const Navbar = () => {
@@ -18,7 +19,7 @@ export const Navbar = () => {
       <div className="right">
         <div className="user">
           <Link
-            to={`/profile/${currentUser.id}`} 
+            to={`/profile/${currentUser.id}`}
             style={{ textDecoration: "none", color: "inherit" }}
           >
             <img
@@ -29,7 +30,9 @@ export const Navbar = () => {
           </Link>
         </div>
       </div>
+      <Logout />
     </div>
   );
 };
+
 

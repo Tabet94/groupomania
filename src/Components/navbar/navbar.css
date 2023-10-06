@@ -2,9 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:#662549;
-  color: #fff;
+  background-color: #553772;
+  color: white;
   padding: 10px 20px;
+}
+
+.left {
+  flex: 1;
 }
 
 .navbar a {
@@ -12,14 +16,9 @@
   color: #fff;
 }
 
-.left {
-  display: flex;
-  align-items: center;
-}
-
 .right {
-  display: flex;
-  align-items: center;
+  flex: 1;
+  text-align: right;
 }
 
 .user {
@@ -28,13 +27,10 @@
 }
 
 .user img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   margin-right: 10px;
 }
 
-.user span {
-  font-weight: bold;
-  font-size: 16px;
-}
+

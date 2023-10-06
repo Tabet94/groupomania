@@ -73,21 +73,23 @@ label span {
 }
 
 button {
-  background-color:#662549;
+  background-color:#AE445A; 
   color: #fff;
   border: none;
   padding: 10px 20px;
-  border-radius: 4px;
+  border-radius: 20px 20px 20px 20px;
   margin-top: 20px;
   cursor: pointer;
   font-size: 16px;
 }
 
 .delete-button {
-  background-color: #dc3545;
+  background-color: #AE445A;
   margin-top: 10px;
 }
-
+.delete-button:hover {
+  background-color: #f5487f;;
+}
 .close {
   background-color: #ccc;
   color: #fff;
@@ -101,3 +103,5 @@ button {
 .close:hover {
   background-color: #999;
 }
+
+

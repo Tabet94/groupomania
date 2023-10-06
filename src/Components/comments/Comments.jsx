@@ -52,8 +52,8 @@ export const Comments = ({ postId }) => {
         ? "Something went wrong"
         : isLoading
         ? "loading"
-        : data.map((comment) => (
-            <div className="comment">
+        : data.map((comment,index) => (
+            <div key={index} className="comment">
               <img src={"/upload/" + comment.profilePic} alt="" />
               <div className="info">
                 <span>{comment.name}</span>

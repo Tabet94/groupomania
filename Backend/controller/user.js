@@ -29,8 +29,8 @@ export const updateUser = (req, res) => {
       q,
       [
         req.body.name,
-        req.body.coverPic,
         req.body.profilePic,
+        req.body.coverPic,
         req.body.email,
         req.body.password,
         userInfo.id
