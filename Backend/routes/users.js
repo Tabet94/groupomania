@@ -6,6 +6,6 @@ const router = express.Router()
 
 router.get("/find/:userId", getUser)
 router.put("/", updateUser)
-router.put("/", deleteUser)
+router.delete("/:userId", deleteUser)
 
 export default router

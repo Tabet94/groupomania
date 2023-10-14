@@ -1,0 +1,3 @@
+DELETE http://localhost:5000/backend/users/67
+
+GET  http://localhost:5000/backend/users/find/67

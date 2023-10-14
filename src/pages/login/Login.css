@@ -40,7 +40,6 @@
   
   .login .card .left button {
     background-color:#451952;
-    padding: 10px;
     font-weight: bold;
     cursor: pointer;
   }
@@ -72,7 +71,6 @@
   }
   
   .login .card .right form button {
-    padding: 10px;
     border: none;
     background-color:#451952;
     font-weight: bold;

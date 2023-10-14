@@ -9,6 +9,7 @@ import moment from "moment";
 export const Comments = ({ postId }) => {
   const [desc, setDesc] = useState("");
   const { currentUser } = useContext(AuthContext);
+  console.log(currentUser)
 
   const { isLoading, error, data } = useQuery(["comments"], () =>
     makeRequest.get("/comments?postId=" + postId).then((res) => {
@@ -55,6 +56,7 @@ export const Comments = ({ postId }) => {
         : data.map((comment,index) => (
             <div key={index} className="comment">
               <img src={"/upload/" + comment.profilePic} alt="" />
+             
               <div className="info">
                 <span>{comment.name}</span>
                 <p>{comment.desc}</p>
@@ -62,6 +64,7 @@ export const Comments = ({ postId }) => {
               <span className="date">
                 {moment(comment.createdAt).fromNow()}
               </span>
+              {console.log(comment)}
             </div>
           ))}
     </div>

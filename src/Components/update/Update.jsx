@@ -6,6 +6,7 @@ import { useMutation, useQueryClient } from "react-query";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import SystemUpdateAltOutlinedIcon from '@mui/icons-material/SystemUpdateAltOutlined';
 
+
 export const Update = ({ setOpenUpdate, user }) => {
   const [cover, setCover] = useState(null);
   const [profile, setProfile] = useState(null);
@@ -65,25 +66,33 @@ export const Update = ({ setOpenUpdate, user }) => {
 
   const navigate = useNavigate()
   
-  const handleDelete = async () => {
-    if (window.confirm("Are you sure you want to delete your account?")) {
-      try {
-        // Send a DELETE request to the server to delete the user
-        const response = await makeRequest.delete("/users");
-        if (response.data === "User deleted successfully!") {
-          navigate("/login")
-        } else {
-          // Handle error (e.g., display an error message)
-        }
-      } catch (error) {
-        console.error(error);
-        // Handle error (e.g., display an error message)
-      }
-    }
-  };
-  
+ function deleteUser (e, id)
+ {
+  e.preventDefault();
+  console.log(id)
+  fetch(`http://localhost:5000/backend/users/${id}`, {
+  method: "DELETE",
+  credentials: "include"
+})
+  .then((result) => result.json())
+  .then((resp) => {
+    console.warn(resp);
+    if (resp.message === "User deleted successfully") {
+      // Clear local storage if needed
+      localStorage.clear();
 
- 
+      // Navigate to the desired path
+      navigate("/login")
+    }
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+  
+}
+
+
+
   
   return (
     <div className="update">
@@ -145,7 +154,7 @@ export const Update = ({ setOpenUpdate, user }) => {
             name="name"
             onChange={handleChange}/>
           <SystemUpdateAltOutlinedIcon onClick={handleClick}>Update</SystemUpdateAltOutlinedIcon>
-          <button onClick={handleDelete} className="delete-button">
+          <button onClick={(e) => {deleteUser(e, user.id)}} className="delete-button">
             Delete Account
           </button>
         </form>

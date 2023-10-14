@@ -1,14 +1,14 @@
 import  express  from "express";
 const app = express();
+
+import cookieParser from "cookie-parser";
+import cors from "cors";
+import multer from "multer";
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
 import postRoutes from "./routes/posts.js";
 import commentRoutes from "./routes/comments.js";
 import likeRoutes from "./routes/likes.js";
-import cookieParser from "cookie-parser";
-import cors from "cors";
-import multer from "multer";
-
 
 // MIDDLWARES ...............................................................................
 app.use((req, res, next) => {
@@ -16,12 +16,13 @@ app.use((req, res, next) => {
   next();
 });
 app.use(express.json());
+app.use(cookieParser());
 app.use(
   cors({
     origin: "http://localhost:3000",
   })
 );
-app.use(cookieParser());
+
 
 
 
