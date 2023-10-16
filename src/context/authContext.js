@@ -13,6 +13,7 @@ export const AuthContextProvider = ({ children }) => {
       const res = await axios.post("http://localhost:5000/backend/auth/login", inputs, {
         withCredentials: true,
       });
+      console.log(res.data)
       setCurrentUser(res.data);
     } catch (error) {
       console.error("Login error:", error);
@@ -25,7 +26,7 @@ export const AuthContextProvider = ({ children }) => {
       await axios.post("http://localhost:5000/backend/auth/logout", null, {
         withCredentials: true,
       });
-      setCurrentUser(null); // Clear the current user state
+      setCurrentUser(null); 
     } catch (error) {
       console.error("Logout error:", error);
       throw error;
@@ -39,7 +40,7 @@ export const AuthContextProvider = ({ children }) => {
   
 
   return (
-    <AuthContext.Provider value={{ currentUser, login, logout }}>
+    <AuthContext.Provider value={{ currentUser, setCurrentUser, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

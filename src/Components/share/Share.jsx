@@ -7,6 +7,7 @@ import { makeRequest } from "../../axios";
 
 
 
+
 export const Share = () => {
   const [file, setFile] = useState(null);
   const [desc, setDesc] = useState("");
@@ -56,7 +57,8 @@ export const Share = () => {
       <div className="container">
         <div className="top">
           <div className="left">
-            <img src={"/upload/" + currentUser.profilePic} alt="" />
+          <img src={"/upload/" + currentUser.profilePic} alt="" />
+
             <input
               type="text"
               placeholder={`What's on your mind ${currentUser.name}?`}

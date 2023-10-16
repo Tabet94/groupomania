@@ -5,9 +5,12 @@ import "./update.css";
 import { useMutation, useQueryClient } from "react-query";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import SystemUpdateAltOutlinedIcon from '@mui/icons-material/SystemUpdateAltOutlined';
+import { useContext } from "react";
+import { AuthContext } from "../../context/authContext";
 
 
 export const Update = ({ setOpenUpdate, user }) => {
+  const { setCurrentUser } = useContext(AuthContext);
   const [cover, setCover] = useState(null);
   const [profile, setProfile] = useState(null);
   const [texts, setTexts] = useState({
@@ -51,17 +54,37 @@ export const Update = ({ setOpenUpdate, user }) => {
   
   const handleClick = async (e) => {
     e.preventDefault();
-    
+  
     let coverUrl;
     let profileUrl;
     coverUrl = cover ? await upload(cover) : user.coverPic;
     profileUrl = profile ? await upload(profile) : user.profilePic;
+  
     
-    mutation.mutate({ ...texts, coverPic: coverUrl, profilePic: profileUrl });
+    const updatedUser = {
+      ...texts,
+      coverPic: coverUrl,
+      profilePic: profileUrl,
+    };
+  
+    mutation.mutate(updatedUser);
+  
+    
+    setCurrentUser((prevUser) => ({
+      ...prevUser,
+      profilePic: profileUrl,
+      
+
+    }));
+  
     setOpenUpdate(false);
     setCover(null);
     setProfile(null);
+
+
+    
   };
+  
 
 
   const navigate = useNavigate()
@@ -78,10 +101,10 @@ export const Update = ({ setOpenUpdate, user }) => {
   .then((resp) => {
     console.warn(resp);
     if (resp.message === "User deleted successfully") {
-      // Clear local storage if needed
+    
       localStorage.clear();
 
-      // Navigate to the desired path
+      
       navigate("/login")
     }
   })
@@ -163,3 +186,6 @@ export const Update = ({ setOpenUpdate, user }) => {
     </div>
   );
 };
+
+
+//

@@ -3,3 +3,9 @@
     flex-direction: column;
     gap: 50px;
   }
+
+
+  .posts.new-post {
+    background-color: red;
+  }
+  

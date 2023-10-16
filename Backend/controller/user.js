@@ -1,6 +1,6 @@
 import { db } from "../connect.js";
 import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt"
+
 
 
 
@@ -22,9 +22,8 @@ export const updateUser = (req, res) => {
   jwt.verify(token, "secretkey", (err, userInfo) => {
     if (err) return res.status(403).json("Token is not valid!");
 
-    
+  
 
-    
     const q =
       "UPDATE users SET `name`=?,`profilePic`=?,`coverPic`=?, `email` =?, `password` =? WHERE id=? ";
 

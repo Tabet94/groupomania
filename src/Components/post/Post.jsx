@@ -77,7 +77,7 @@ export const Post = ({ post }) => {
                 style={{ textDecoration: "none", color: "inherit" }}>
                 <span className="name">{post.name}</span>
               </Link>
-              <span className="date">{moment(post.createdAt).fromNow()}</span>
+              <span className="date">{moment(post.createdAt).format()}</span>
             </div>
           </div>
           <DeleteIcon onClick={() => setMenuOpen(!menuOpen)} />
