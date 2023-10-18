@@ -1,6 +1,7 @@
 import { AuthContext } from "../../context/authContext"; 
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
+import LogoutIcon from '@mui/icons-material/Logout';
 import "./logout.css"
 
 export const Logout = () => {
@@ -17,6 +18,13 @@ export const Logout = () => {
   };
 
   return (
-    <button className="logout" onClick={handleLogout}>Logout</button>
-  );
+    <LogoutIcon
+    className="logout"
+    onClick={handleLogout}
+    style={{ 
+      cursor: 'pointer',
+      transition: 'color 0.2s', 
+    }}
+    />
+  )
 };

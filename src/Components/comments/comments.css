@@ -4,7 +4,6 @@
   padding-top: 20px;
 }
 
-
 .write {
   display: flex;
   align-items: center;
@@ -12,48 +11,49 @@
 }
 
 .write img {
-  width: 40px;
-  height: 40px;
+  width: 48px; 
+  height: 48px; 
   object-fit: cover;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 12px; 
 }
 
 .write input[type="text"] {
   flex-grow: 1;
-  padding: 10px;
+  padding: 12px; 
   border: 1px solid #ccc;
-  border-radius: 20px;
+  border-radius: 25px; 
   outline: none;
+  font-size: 16px; 
 }
 
 .write button {
-  background-color:#AE445A;
+  background-color: #AE445A;
   color: #fff;
   border: none;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 12px 24px; 
+  font-size: 18px;
   cursor: pointer;
-  border-radius: 20px;
-  margin-left: 10px;
+  border-radius: 25px; 
+  margin-left: 12px; 
 }
 
 .write button:hover {
   background-color: #f5487f;
 }
 
-/* Comment */
+
 .comment {
   display: flex;
   margin-bottom: 20px;
 }
 
 .comment img {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px; 
   object-fit: cover;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 12px; 
 }
 
 .comment .info {
@@ -61,23 +61,22 @@
 }
 
 .comment .info span {
-  font-weight: bold;
+  font-weight: 600; 
 }
 
 .comment .date {
   color: #888;
+  font-size: 14px; 
 }
 
 .comment p {
-  margin-top: 5px;
+  margin-top: 8px; 
 }
-
 
 .loading,
 .error-message {
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   color: #888;
   margin-bottom: 20px;
 }
-

@@ -4,6 +4,7 @@ import { AuthContext } from "../../context/authContext";
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import {makeRequest} from "../../axios";
 import moment from "moment";
+import SendIcon from '@mui/icons-material/Send';
 
 
 export const Comments = ({ postId }) => {
@@ -47,7 +48,7 @@ export const Comments = ({ postId }) => {
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
         />
-        <button onClick={handleClick}>Send</button>
+        <SendIcon onClick={handleClick}></SendIcon >
       </div>
       {error
         ? "Something went wrong"

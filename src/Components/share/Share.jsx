@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../context/authContext";
 import { useMutation, useQueryClient } from "react-query";
 import { makeRequest } from "../../axios";
+import SendIcon from '@mui/icons-material/Send';
 
 
 
@@ -86,7 +87,9 @@ export const Share = () => {
             </label> 
           </div>
           <div className="right">
-            <button onClick={handleClick}>Share</button>
+            <SendIcon onClick={handleClick}>
+              
+            </SendIcon>
           </div>
         </div>
       </div>

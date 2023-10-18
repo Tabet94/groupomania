@@ -1,109 +1,126 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
 .login {
-    height: 100vh;
-    background-color: #1D1A39;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  
+  height: 100vh;
+  background-color: #3B82F6; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.login .card {
+  width: 80%; 
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); 
+}
+
+
+.login .card .left {
+  flex: 1;
+  background: linear-gradient(rgba(59, 130, 246, 0.8), rgba(59, 130, 246, 0.8)),
+              url("/src/Image/back.jpg") center;
+  background-size: cover;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  color: white;
+  text-align: center;
+}
+
+.login .card .left h1 {
+  font-size: 3rem; 
+  line-height: 1.2;
+}
+
+.login .card .left span {
+  font-size: 1.2rem;
+}
+
+.login .card .left button {
+  background-color: #F87171; 
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s; 
+}
+
+.login .card .left button:hover {
+  background-color: #EF4444; 
+}
+
+
+.login .card .right {
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  background-color: white; 
+}
+
+.login .card .right h1 {
+  font-size: 2rem;
+  color: #4B5563; 
+}
+
+.login .card .right form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+}
+
+.login .card .right form input {
+  border: 1px solid #D1D5DB;
+  padding: 12px 10px;
+  border-radius: 5px; 
+  font-size: 1rem;
+}
+
+.login .card .right form button {
+  width: 60%; 
+  padding: 12px 24px;
+  border: none;
+  background-color: #F87171; 
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login .card .right form button:hover {
+  background-color: #EF4444;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
   .login .card {
-    width: 50%;
-    display: flex;
-    background-color: white;
-    border-radius: 10px;
-    min-height: 600px;
-    overflow: hidden;
+    flex-direction: column;
+    width: 90%; 
   }
-  
- 
+
   .login .card .left {
-    flex: 1;
-    background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
-      url("/src/Image/back.jpg") center;
-    background-size: cover;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    color: white;
+    padding: 20px;
   }
-  
+
   .login .card .left h1 {
-    font-size: 50px;
-    line-height: 100px;
+    font-size: 2.5rem; 
+    line-height: 1.2;
   }
-  
-  .login .card .left span {
-    font-size: 14px;
-  }
-  
+
   .login .card .left button {
-    background-color:#451952;
-    font-weight: bold;
-    cursor: pointer;
+    width: 70%;
   }
-  
-  
+
   .login .card .right {
-    flex: 1;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    justify-content: center;
+    padding: 20px;
   }
-  
-  .login .card .right h1 {
-    color: #555;
-  }
-  
-  .login .card .right form {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-  
-  .login .card .right form input {
-    border: none;
-    border-bottom: 1px solid lightgray;
-    padding: 20px 10px;
-  }
-  
-  .login .card .right form button {
-    border: none;
-    background-color:#451952;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  /* Media Queries */
-  @media screen and (max-width: 768px) {
-    
-    .login .card {
-      flex-direction: column; 
-      width: 80%; 
-    }
-  
-    .login .card .left {
-      padding: 20px; 
-      text-align: center; 
-    }
-  
-    .login .card .left h1 {
-      font-size: 30px; 
-      line-height: 50px;
-    }
-  
-    .login .card .left button {
-      width: 70%; 
-    }
-  
-    .login .card .right {
-      padding: 20px; 
-      text-align: center; 
-    }
-  
-    
-  }
-  
+}

@@ -1,72 +1,65 @@
 .share {
-    box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
-    border-radius: 20px;
-    background-color: white;
-    margin-bottom: 20px;
-  }
-  
-  .share .container {
-    padding: 20px;
-  }
-  
-  .share .container .top {
-    gap: 20px;
-  }
-  
-  .share .container .top img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .share .container .top input {
-    border: none;
-    outline: none;
-    padding: 20px 10px;
-    background-color: transparent;
-    width: 60%;
-  }
-  
-  
-  .share .container .bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .share .container .bottom .left {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .share .container .bottom .left .item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-  }
-  
-  .share .container .bottom .left .item img {
-    height: 20px;
-  }
-  
-  .share .container .bottom .left .item span {
-    font-size: 12px;
-    color: gray;
-  }
-  
-  .share .container .bottom .right button {
-  background-color:#AE445A;
-  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+}
+
+.share .container {
+  padding: 20px;
+}
+
+
+.share .container .top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.share .container .top img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.share .container .top input {
   border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 20px;
-  margin-left: 10px;
-  }
-  .share .container .bottom .right button:hover {
-    background-color: #f5487f;
-  }
+  outline: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+
+.share .container .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.share .container .bottom .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+.share .container .bottom .left .item img {
+  height: 16px;
+}
+
+.share .container .bottom .left .item span {
+  font-size: 12px;
+  color: #888; 
+}
+
+
+
+
+
+
+
