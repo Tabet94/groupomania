@@ -21,7 +21,7 @@ export const Update = ({ setOpenUpdate, user }) => {
 
   
   const upload = async (file) => {
-    console.log(file)
+  
     try {
       const formData = new FormData();
       formData.append("file", file);
@@ -35,6 +35,7 @@ export const Update = ({ setOpenUpdate, user }) => {
   
   const handleChange = (e) => {
     setTexts((prev) => ({ ...prev, [e.target.name]: [e.target.value] }));
+    console.log(setTexts)
   };
 
   const queryClient = useQueryClient();
@@ -49,6 +50,9 @@ export const Update = ({ setOpenUpdate, user }) => {
       },
     }
   );
+  // console.log(2)
+
+  
 
   
   
@@ -66,6 +70,7 @@ export const Update = ({ setOpenUpdate, user }) => {
       coverPic: coverUrl,
       profilePic: profileUrl,
     };
+   
   
     mutation.mutate(updatedUser);
   
@@ -84,7 +89,7 @@ export const Update = ({ setOpenUpdate, user }) => {
 
     
   };
-  
+  // console.log(3)
 
 
   const navigate = useNavigate()

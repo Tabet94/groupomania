@@ -42,17 +42,24 @@ export const Share = () => {
   );
 
   
-  
   const handleClick = async (e) => {
     e.preventDefault();
+  
+    // Validation: Check if 'desc' is empty
+    if (!desc.trim() && !file) {
+      alert("You cannot share an empty post.");
+      return;
+    }
+  
     let imgUrl = "";
     if (file) imgUrl = await upload();
     mutation.mutate({ desc, img: imgUrl });
     setDesc("");
     setFile(null);
   };
-
   
+  
+ 
   return (
     <div className="share">
       <div className="container">
@@ -88,7 +95,6 @@ export const Share = () => {
           </div>
           <div className="right">
             <SendIcon onClick={handleClick}>
-              
             </SendIcon>
           </div>
         </div>

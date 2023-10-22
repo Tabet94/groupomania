@@ -33,7 +33,7 @@ export const addPost = (req, res) => {
         const values = [
             req.body.desc,
             req.body.img,
-            moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
+            moment(Date.now()).fromNow("YYYY-MM-DD HH:mm:ss"),
             userInfo.id
         ]
 
@@ -45,6 +45,8 @@ export const addPost = (req, res) => {
         })
     });
 };
+
+
 
 export const deletePost = (req, res) => {
     const token = req.cookies.accessToken;

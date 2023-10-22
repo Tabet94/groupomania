@@ -1,5 +1,6 @@
 import { db } from "../connect.js";
 import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt"
 
 
 
@@ -21,6 +22,10 @@ export const updateUser = (req, res) => {
 
   jwt.verify(token, "secretkey", (err, userInfo) => {
     if (err) return res.status(403).json("Token is not valid!");
+   
+    const salt = bcrypt.genSaltSync(10);
+    const hashedPassword = bcrypt.hashSync(req.body.password, salt);
+    console.log(hashedPassword)
 
   
 
@@ -34,7 +39,7 @@ export const updateUser = (req, res) => {
         req.body.profilePic,
         req.body.coverPic,
         req.body.email,
-        req.body.password,
+        hashedPassword,
         userInfo.id
       ],
       (err, data) => {

@@ -34,6 +34,12 @@ export const Comments = ({ postId }) => {
 
   const handleClick = async (e) => {
     e.preventDefault();
+
+    if (!desc.trim()) {
+      alert("You cannot post an empty comment.");
+      return;
+    }
+    
     mutation.mutate({ desc, postId });
     setDesc("");
   };

@@ -10,6 +10,7 @@ import { AuthContext } from "../../context/authContext";
 
 export const Profile = () => {
   const [openUpdate, setOpenUpdate] = useState(false);
+  // const [Update, setUpdate] = useState(false);
   const { currentUser } = useContext(AuthContext);
   
 
@@ -41,6 +42,7 @@ export const Profile = () => {
             </div>
             <button onClick={() => setOpenUpdate(true)}>update</button>
             {openUpdate && userId === currentUser.id && <Update setOpenUpdate={setOpenUpdate} user={data} />}
+            {/* {if ( userId ! currentUser.id ) && {<Update setUpdate={setUpdate} user={data} />} */}
           </div>
         </div>
         </>
