@@ -1,10 +1,10 @@
 .profile {
-  margin: 0 auto;
+  margin: 30px auto 0px auto;
   padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 10px rgba(30, 0, 75, 0.62);
   background-color: #f5f8fa; 
   max-width: 800px;
-  border-radius: 10px;
+  border-radius: 50px;
 }
 
 

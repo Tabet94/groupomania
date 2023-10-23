@@ -2,14 +2,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:rgb(244, 223, 182) ;
+  background-color:rgb(244, 223, 182);
   color: #fff;
   padding: 10px 20px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 10px 10px rgba(150, 49, 12, 0.727); 
   height: 95px; 
 }
 
-
+/* rgba(166, 117, 235, 0.928); */
 .left {
   flex: 1;
 }

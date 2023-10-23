@@ -1,13 +1,14 @@
 .share {
-  box-shadow: 0 2px 4px rgba(30, 0, 75, 0.62);
+  box-shadow: 0 4px 6px rgba(30, 0, 75, 0.62);
   border-radius: 10px;
   background-color: #f9f9f9;
   margin-bottom: 20px;
   transition: transform 0.2s;
+  margin-top: 30px;
 }
 
 .share .container {
-  padding: 20px;
+  padding: 30px;
 }
 
 

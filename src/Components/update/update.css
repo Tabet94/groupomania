@@ -63,17 +63,10 @@ label span {
   object-fit: cover;
 }
 
-.icon {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background-color: #fff;
-  border-radius: 50%;
-  cursor: pointer;
-}
+
 
 button {
-  background-color:#AE445A; 
+  background-color:rgba(59, 4, 122, 0.948); 
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -84,14 +77,14 @@ button {
 }
 
 .delete-button {
-  background-color: #AE445A;
+  background-color:red;
   margin-top: 10px;
 }
 .delete-button:hover {
-  background-color: #f5487f;;
+  background-color: red;
 }
 .close {
-  background-color: #ccc;
+  background-color: rgba(108, 4, 122, 0.948);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -101,7 +94,7 @@ button {
 }
 
 .close:hover {
-  background-color: #999;
+  background-color:  rgba(207, 95, 222, 0.855);
 }
 
 

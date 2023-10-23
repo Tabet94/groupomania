@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import "./update.css";
 import { useMutation, useQueryClient } from "react-query";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
-import SystemUpdateAltOutlinedIcon from '@mui/icons-material/SystemUpdateAltOutlined';
 import { useContext } from "react";
 import { AuthContext } from "../../context/authContext";
 
@@ -181,7 +180,7 @@ export const Update = ({ setOpenUpdate, user }) => {
             value={texts.name}
             name="name"
             onChange={handleChange}/>
-          <SystemUpdateAltOutlinedIcon onClick={handleClick}>Update</SystemUpdateAltOutlinedIcon>
+          <button onClick={handleClick}>Update</button>
           <button onClick={(e) => {deleteUser(e, user.id)}} className="delete-button">
             Delete Account
           </button>
@@ -193,4 +192,3 @@ export const Update = ({ setOpenUpdate, user }) => {
 };
 
 
-//
