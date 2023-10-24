@@ -14,8 +14,7 @@ export const Update = ({ setOpenUpdate, user }) => {
   const [profile, setProfile] = useState(null);
   const [texts, setTexts] = useState({
     email: user.email,
-    password: user.password,
-    name: user.name,
+    username: user.username,
   });
 
   
@@ -34,7 +33,6 @@ export const Update = ({ setOpenUpdate, user }) => {
   
   const handleChange = (e) => {
     setTexts((prev) => ({ ...prev, [e.target.name]: [e.target.value] }));
-    console.log(setTexts)
   };
 
   const queryClient = useQueryClient();
@@ -49,7 +47,7 @@ export const Update = ({ setOpenUpdate, user }) => {
       },
     }
   );
-  // console.log(2)
+ 
 
   
 
@@ -83,15 +81,10 @@ export const Update = ({ setOpenUpdate, user }) => {
   
     setOpenUpdate(false);
     setCover(null);
-    setProfile(null);
-
-
-    
+    setProfile(null);  
   };
-  // console.log(3)
-
-
-  const navigate = useNavigate()
+  
+const navigate = useNavigate()
   
  function deleteUser (e, id)
  {
@@ -107,8 +100,7 @@ export const Update = ({ setOpenUpdate, user }) => {
     if (resp.message === "User deleted successfully") {
     
       localStorage.clear();
-
-      
+    
       navigate("/login")
     }
   })
@@ -168,17 +160,11 @@ export const Update = ({ setOpenUpdate, user }) => {
             value={texts.email}
             name="email"
             onChange={handleChange}/>
-          <label>Password</label>
-          <input
-            type="text"
-            value={texts.password}
-            name="password"
-            onChange={handleChange}/>
-          <label>Name</label>
+          <label>UserName</label>
           <input
             type="text"
             value={texts.name}
-            name="name"
+            name="username"
             onChange={handleChange}/>
           <button onClick={handleClick}>Update</button>
           <button onClick={(e) => {deleteUser(e, user.id)}} className="delete-button">

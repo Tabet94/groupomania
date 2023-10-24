@@ -21,8 +21,10 @@ import React, { useState } from "react";
   
   
 return (
+  
   <div className={`posts ${isNewPostAdded ? "new-post" : ""}`}>
     {error ? "Something went wrong!" : isLoading ? "loading" : data.map((post) => <Post post={post} key={post.id} />)}
+    <span class="card-badge">New</span>
   </div>
 );
 };

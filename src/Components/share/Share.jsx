@@ -69,7 +69,7 @@ export const Share = () => {
 
             <input
               type="text"
-              placeholder={`What's on your mind ${currentUser.name}?`}
+              placeholder={`What's on your mind ?`}
               onChange={(e) => setDesc(e.target.value)}
               value={desc}/>
           </div>

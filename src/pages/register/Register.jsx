@@ -28,7 +28,7 @@ export const Register = () => {
     e.preventDefault();
   
     // Validation
-    if (!isNotEmpty(inputs.username) || !isNotEmpty(inputs.email) || !isNotEmpty(inputs.password) || !isNotEmpty(inputs.name)) {
+    if (!isNotEmpty(inputs.username) || !isNotEmpty(inputs.email) || !isNotEmpty(inputs.password) ) {
       setErr("All fields are required.");
       return;
     }
@@ -92,11 +92,6 @@ export const Register = () => {
               type="password"
               placeholder="Password"
               name="password"
-              onChange={handleChange}/>
-            <input
-              type="text"
-              placeholder="Name"
-              name="name"
               onChange={handleChange}/>
             {err && err}
             <button onClick={handleClick}>Register</button>

@@ -10,7 +10,7 @@ export const getPosts = (req, res) => {
     
 
 
-        const q = 'SELECT p.*, u.id AS userId, name, profilePic FROM posts AS p JOIN users AS u ON (u.id) = p.userId ORDER BY p.createdat DESC';
+        const q = 'SELECT p.*, u.id AS userId, username, profilePic FROM posts AS p JOIN users AS u ON (u.id) = p.userId ORDER BY p.createdat DESC';
     
         db.query(q,[userInfo.id], (err, data) => {
             if (err) return res.status(500).json(err);

@@ -1,13 +1,14 @@
 .comments {
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 5px;
+  margin: 10px 0;
 }
 
 .write {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  background-color: #f0f2f5; 
+  border-radius: 999px; 
+  padding: 10px;
 }
 
 .write img {
@@ -20,10 +21,10 @@
 .write input[type="text"] {
   flex: 1;
   border: none;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 10px;
+  background-color: transparent; 
   font-size: 16px;
+  margin-right: 10px;
+  outline: none; 
 }
 
 .write input[type="text"]::placeholder {
@@ -32,20 +33,19 @@
 
 .write input[type="text"]:focus {
   outline: none;
-  border: 2px solid #3498db;
 }
 
-.write input[type="text"]:focus + .MuiSvgIcon-root {
-  color:#F87171;
-  cursor: pointer;
-}
+
 
 .comment {
   display: flex;
+  flex-direction: column;
+  align-items: inherit;
   margin-bottom: 10px;
   padding: 10px;
-
-  border-radius: 5px;
+  border-radius:30px;
+  background-color: #fff; 
+  box-shadow: 0 3px 6px  rgba(30, 0, 75, 0.62); 
 }
 
 .comment img {
@@ -53,6 +53,7 @@
   height: 50px;
   border-radius: 50%;
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .comment .info {
@@ -66,6 +67,10 @@
 
 .comment .info p {
   font-size: 16px;
+  background-color: #f0f2f5;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
 .comment .date {
@@ -74,10 +79,6 @@
 }
 
 
-.SendIcon {
-  color:#F87171;
-  cursor: pointer;
-}
 
 .MuiSvgIcon-root {
   color:rgba(30, 0, 75, 0.62);

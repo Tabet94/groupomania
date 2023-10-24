@@ -10,7 +10,7 @@ import SendIcon from '@mui/icons-material/Send';
 export const Comments = ({ postId }) => {
   const [desc, setDesc] = useState("");
   const { currentUser } = useContext(AuthContext);
-  console.log(currentUser)
+
 
   const { isLoading, error, data } = useQuery(["comments"], () =>
     makeRequest.get("/comments?postId=" + postId).then((res) => {
@@ -63,15 +63,13 @@ export const Comments = ({ postId }) => {
         : data.map((comment,index) => (
             <div key={index} className="comment">
               <img src={"/upload/" + comment.profilePic} alt="" />
-             
               <div className="info">
-                <span>{comment.name}</span>
+                <span>{comment.username}</span>
                 <p>{comment.desc}</p>
               </div>
               <span className="date">
                 {moment(comment.createdAt).fromNow()}
               </span>
-              {console.log(comment)}
             </div>
           ))}
     </div>
