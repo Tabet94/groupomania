@@ -19,6 +19,9 @@ export const Post = ({ post }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { currentUser } = useContext(AuthContext);
   const queryClient = useQueryClient();
+
+  
+
   
   
   const { isLoading, data } = useQuery(["likes", post.id], () =>
@@ -75,10 +78,10 @@ export const Post = ({ post }) => {
               <Link
                 to={`/profile/${post.userId}`}
                 style={{ textDecoration: "none", color: "inherit" }}>
-                <span className="name">{post.username}</span>
+                <span className="username">{post.username}</span>
               </Link>
-              <span className="date">{moment(post.createdAt).format()}</span>
-              
+              <span className="date">{moment(post.createdAt).fromNow()}</span>
+
             </div>
           </div>
           <DeleteIcon onClick={() => setMenuOpen(!menuOpen)} />
