@@ -59,5 +59,3 @@ app.listen(5000, () => {
   console.log('Listening on port 5000');
 });
 
-// Export the Express application for use in other files
-export default app;
